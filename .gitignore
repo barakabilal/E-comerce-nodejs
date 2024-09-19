@@ -1,0 +1,4 @@
+/.vscode
+/dist
+/nodemon.json
+/node_modules
