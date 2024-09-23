@@ -13,12 +13,12 @@ export interface Icart extends Document {
     status:"active"|"completed"//when the client want to confirm his cart to an order it's became completed
 }
 const cartitemschema=new Schema({
-    product:{type:Schema.Types.ObjectId,ref:"product",required:true },
+    product:{type:Schema.Types.ObjectId,ref:"products",required:true },
     quantity:{type:Number,required:true },
     unitprice:{type:Number,required:true}
 })
 const cartschema= new Schema({
-    userId:{type:Schema.Types.ObjectId,ref:"user",required:true },
+    userId:{type:Schema.Types.ObjectId,ref:"users",required:true },
     items:[cartitemschema],
     totalamount:{type:Number,required:true},
     status:{type:String,enum :cartstatusenum,required:true}
