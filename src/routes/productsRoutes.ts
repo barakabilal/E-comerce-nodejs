@@ -4,7 +4,10 @@ import { getALLproducts } from "../SERVICES/productservices"
 
 const router=express.Router()
 router.get('/',async(req,res)=>{
-const result =await getALLproducts()
-res.send(result)
+    try{const result =await getALLproducts()
+        res.send(result)}
+catch(err){
+    res.status(500).send("something went wrong!")
+}
 })
 export default router
