@@ -1,5 +1,5 @@
 import express from "express"
-import { getALLproducts } from "../ProductService/productservices"
+import { getALLproducts } from "../SERVICES/productservices"
 
 
 const router=express.Router()

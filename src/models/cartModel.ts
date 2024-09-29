@@ -4,7 +4,7 @@ const cartstatusenum=["active","completed"]
 export interface Icartitem  {
     product :IProduct;
     unitprice:number;
-    quantity:Number;
+    quantity:number;
 }
 export interface Icart extends Document {
     userId:ObjectId|string;

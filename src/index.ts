@@ -1,7 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import userRoutes from "./routes/userRoutes";
-import { seedproductsindb}  from "./ProductService/productservices";
+import { seedproductsindb}  from "./SERVICES/productservices";
 import productsRoutes from "./routes/productsRoutes";
 import cartRoute from "./routes/cartRoute";
 

@@ -3,7 +3,7 @@ export interface IProduct extends Document{
     title: string;
     image:string
     price: number;
-    stock:Number
+    stock:number
 
 }
 
