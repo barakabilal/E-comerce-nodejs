@@ -34,5 +34,5 @@ return {data:"incorrect password or email",statuscode:400}
 return {data:generatejwt({email,lastname:findUser.lastname,firstname:findUser.firstname}),statuscode:200};
 }
 const generatejwt=(data:any)=>{
-return jwt.sign(data,'OjSDG50F7Scx2jCjZOCYP7wpMEsOyVq6',)
+return jwt.sign(data,process.env.JWT_SECRET_KEY||"",)
 }
