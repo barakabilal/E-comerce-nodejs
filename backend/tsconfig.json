@@ -6,7 +6,7 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "outDir": "./dist",      // Compiled JavaScript files go here
+    "outDir": "backend/dist",      // Compiled JavaScript files go here
     "rootDir": "./src"       // Your source TypeScript files
   },
   "include": ["src/**/*", "src/models"],     // Include all files in the src folder
