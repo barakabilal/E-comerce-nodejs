@@ -1,6 +1,10 @@
 const Homepage=()=>{
     return(
-        <div className="text-cyan-900 text-center">fuck you</div>
+        <>
+        
+       <div>hello</div> 
+        </>
+        
     )
 }
 export default Homepage
