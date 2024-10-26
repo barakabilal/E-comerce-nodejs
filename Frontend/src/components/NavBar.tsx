@@ -41,7 +41,7 @@ function NavBar() {
   return (
     <motion.div>
       <ThemeProvider theme={theme}>
-        <AppBar position="static" sx={{ backgroundColor: '#333332', shadow: '3px', marginTop: '6px', borderRadius: '16px', maxWidth: 'xl' }}>
+        <AppBar position="static" sx={{ backgroundColor: '#333332', shadow: '3px', marginTop: '6px', borderRadius: '16px', maxWidth: 'xl',boxShadow: '3px 6px 9px rgba(2, 5, 0, 0.5)' }}>
           <Container maxWidth="xl">
             <Toolbar disableGutters>
               {/* Desktop Logo */}
