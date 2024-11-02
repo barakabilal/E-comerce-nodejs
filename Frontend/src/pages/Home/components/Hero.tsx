@@ -40,7 +40,7 @@ const Hero = () => {
           color: 'white',
           margin: '7px',
           borderRadius: '10px',
-          boxShadow: '3px 7px 20px rgba(0, 0, 0, 0.5)',
+          boxShadow: '4px 9px 20px rgba(0, 0, 0, 0.5)',
         }}
       >
         <div className="flex-col-2 space-y-8">
@@ -52,6 +52,12 @@ const Hero = () => {
           >
             {/* Typed.js text will appear here */}
           </Typography>
+          <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 2 }}
+      transition={{ delay: 0.6, duration: 2 }}
+      className="hero-container"
+    >
           <Button
             startIcon={<ShoppingCartIcon style={{ color: 'orange' }} />}
             variant="contained"
@@ -71,6 +77,7 @@ const Hero = () => {
           >
             Shop Now!
           </Button>
+          </motion.div>
         </div>
       </Box>
     </motion.div>
