@@ -1,7 +1,7 @@
-import { Box, Card, CardContent, CardMedia, Grid, styled, Typography } from "@mui/material";
-
+import { Box, Button, Card, CardContent, CardMedia, Grid, List, ListItem, ListItemText, Paper, styled, Typography } from "@mui/material";
+import Divider from '@mui/material/Divider';
 import BlurFade from "../../../components/blur-fade";
-
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
  const About=()=>{
     const StyledCard = styled(Card)(({ theme }) => ({
@@ -18,8 +18,13 @@ return(
 variant="h3"
             fontFamily="Merriweather"
             sx={{padding:"20px",textAlign:"center",  fontFamily: 'Poppins, sans-serif',
-                fontWeight: 600,
-                color: '#333',marginTop:"30px",marginBottom:"20px"}}
+               
+                color: '#333',marginTop:"30px",marginBottom:"20px",  
+                  background: 'linear-gradient(45deg, #333, #FFD93D)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  fontWeight: 'bold',
+                }}
                  className=""
 >
 Top gadgets, from high-performance laptops to smart home essentials.
@@ -76,13 +81,114 @@ Top gadgets, from high-performance laptops to smart home essentials.
       </CardContent>
     </StyledCard>
 </div>
-   
-   
-  
 
+   <div className="h-7"></div>
+<Divider></Divider>
       
+<Typography
+variant="h4"
+            fontFamily="Merriweather"
+            sx={{padding:"20px",textAlign:"center",  fontFamily: 'Poppins, sans-serif',
+                fontWeight: 600,
+                color: '#333',marginTop:"30px",marginBottom:"20px", background: 'linear-gradient(45deg,#007BFF, #FFD93D)', WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',}}
+                 className=""
+>
+ New Arrivals
+</Typography>
+<div className="flex flex-row space-x-14 lex justify-center items-center mb-8 ">
+<StyledCard sx={{ maxWidth: 345,boxShadow:'4px 9px 20px rgba(0, 0, 0, 0.5)' }}>
+      <CardMedia
+        component="img"
+        height="140"
+        image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBuLVIT-McQjUFzDxbxYMUY-gBqysWig7yOQ&s"
+        alt="Sample Image"
+      
+      />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+         Apple
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+        The iPhone 16 Pro Max is available in all storage options, from 128GB to 1TB, so you can choose the version that best suits your needs.
+        </Typography>
+      </CardContent>
+    </StyledCard>
+<StyledCard sx={{ maxWidth: 345,boxShadow:'4px 9px 20px rgba(0, 0, 0, 0.5) '}}>
+      <CardMedia
+        component="img"
+        height="140"
+        image="https://i05.appmifile.com/64_item_fr/03/09/2024/0dad88aadaf293ee0a332eb4c76778ac!400x400!85.png"
+        alt="Sample Image"
+      />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+   Xiaomi
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+        The Xiaomi 14 is available in multiple storage configurations to suit various needs:
+        <List>
+      <ListItem sx={{margin:"none"}}>
+        <ListItemText primary=" 12GB RAM + 256GB storage" />
+      </ListItem>
+      <ListItem>
+        <ListItemText primary="12GB RAM + 512GB storage" />
+      </ListItem>
+     
+    </List>
+ 
+        </Typography>
+      </CardContent>
+    </StyledCard>
+<StyledCard sx={{ maxWidth: 345,boxShadow:'4px 9px 20px rgba(0, 0, 0, 0.5) ' }}>
+      <CardMedia
+        component="img"
+        height="140"
+        image="https://nextlevelpc.ma/wp-content/uploads/2024/10/PC-Gamer-AMD-Ryzen-5-5500-RTX-3060-8GB-1.webp"
+        alt="Sample Image"
+      />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          Pc Gamer
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+        Unleash your gaming potential with a powerful PC that delivers stunning graphics and seamless gameplay.
+        </Typography>
+      </CardContent>
+    </StyledCard>
+</div>
+<div className="text-center font-bold flex-row">
+  <Typography variant="h3" sx={{fontWeight:"bold",padding:'10px',fontFamily: 'Poppins, sans-serif',}}>
+  For more information visit the shop page </Typography> 
+  <Button
+            startIcon={<ShoppingCartIcon style={{ color: 'orange' }} />}
+            variant="contained"
+            sx={{
+              
+              marginTop:"20px",
+              background: 'white',
+              color: '#333332',
+              width: '200px',
+              fontFamily: 'Merriweather',
+              fontWeight: "bold",
+              height: "50px",
+              boxShadow: '3px 7px 20px rgba(200, 200, 200, 0.4)',
+              borderRadius: '6%',
+              '&:hover': {
+                background: '#333332',
+                color:"white"
+              },
+            }}
+          >
+            Shop Now!
+          </Button>
+</div>
+
+
 
 </BlurFade>
+
+
 )
  }
  export default About
