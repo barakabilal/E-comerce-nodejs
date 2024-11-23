@@ -18,7 +18,7 @@ router.post('/register', async (req, res) => {
 });
 
 router.get("/login", async (req, res) => {
-  try {
+  try {=
     if (!req.body || !req.body.email || !req.body.password) {
       return res.status(400).send({ error: "Missing data", statuscode: 400 });
     }
