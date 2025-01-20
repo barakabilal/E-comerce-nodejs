@@ -26,7 +26,7 @@ const validateJWT = async (req: extendrequest, res: Response, next: NextFunction
         lastname:string
     }
     const user = await Usermodel.findOne({ email: userpayload.email });
-    (req as extendrequest).user=user
+    req.user=user
     next();
   });
 };
