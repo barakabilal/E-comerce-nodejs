@@ -14,7 +14,7 @@ import AdbIcon from '@mui/icons-material/Adb';
 import { createTheme, ThemeProvider } from '@mui/material/styles'; // Import theme provider
 import { motion } from 'framer-motion';
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const pages = ['home','shop','contact'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const theme = createTheme({

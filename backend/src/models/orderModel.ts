@@ -3,7 +3,7 @@ import mongoose, { ObjectId, Schema } from "mongoose";
     producttitle:string;
    unitprice: number;
     quantity: number;
-    image:string
+    image:string;
 }
 //schema model of orderitem
 const orderitemSchema: Schema = new Schema({

@@ -19,13 +19,15 @@
     "@mui/material": "^6.1.6",
     "animate.css": "^4.1.1",
     "dotenv": "^16.4.5",
+    "framer-motion": "^12.0.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-payment-icons": "^1.2.6",
     "react-router-dom": "^6.26.2",
     "react-slick": "^0.30.2",
     "slick-carousel": "^1.8.1",
-    "swiper": "^11.1.14"
+    "swiper": "^11.1.14",
+    "typed.js": "^2.1.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.11.1",

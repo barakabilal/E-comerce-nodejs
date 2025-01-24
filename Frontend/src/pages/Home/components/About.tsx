@@ -1,4 +1,4 @@
-import { Box, Button, Card, CardContent, CardMedia, Grid, List, ListItem, ListItemText, Paper, styled, Typography } from "@mui/material";
+import {  Button, Card, CardContent, CardMedia, List, ListItem, ListItemText,  styled, Typography } from "@mui/material";
 import Divider from '@mui/material/Divider';
 import BlurFade from "../../../components/blur-fade";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';

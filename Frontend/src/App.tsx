@@ -4,11 +4,9 @@ import NavBar from "./components/NavBar"
 import Privacy from "./pages/Privacy"
 import login from "./pages/Login"
 import Registration from "./pages/Registration"
-
+import shopepage from "./pages/Shop/Shopepage"
 
 function App() {
-
-
   return (
  <BrowserRouter>
  <NavBar/>
@@ -18,7 +16,7 @@ function App() {
     <Route path="/login" element={login()}/>
     <Route path="/registration" element={Registration()}/>
     <Route path="/privacy-policy" element={Privacy()}/>
- 
+    <Route path="/Shop" element={shopepage()}/>
  </Routes>
  </BrowserRouter>
 
