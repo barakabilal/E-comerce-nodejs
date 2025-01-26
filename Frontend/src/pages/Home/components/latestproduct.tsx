@@ -1,6 +1,6 @@
 import {  Button, Card, CardContent, CardMedia, List, ListItem, ListItemText,  styled, Typography } from "@mui/material";
 import Divider from '@mui/material/Divider';
-import BlurFade from "../../../components/blur-fade";
+import BlurFade from "../../../components/magicui/blur-fade";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
  const Latestproduct=()=>{
@@ -12,8 +12,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
         },
       }));
 return(
-    <BlurFade delay={0.28} inView
->
+    <BlurFade delay={0.5} inView={true}>
     <Typography
 variant="h3"
             fontFamily="Merriweather"

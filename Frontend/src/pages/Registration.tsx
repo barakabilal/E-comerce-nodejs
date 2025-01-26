@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Loading from "../components/loading";
+import Loading from "../components/ui/loading";
 import { useState } from "react";
 import { RegisterParams } from "../types";
 

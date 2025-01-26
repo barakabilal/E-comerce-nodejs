@@ -1,11 +1,11 @@
 
 import { Typography } from "@mui/material";
-import TestimonialCarousel from "../../../components/Review slider";
+import TestimonialCarousel from "../../../components/ui/Review slider";
 const Review=()=>{
     return(
         <>
         <div className="h-12"></div>
-        <div className="flex-row bg-slate-800 h-56"> <Typography variant="h4" sx={{color:"white",textAlign:"center", fontFamily: 'Poppins, sans-serif',
+        <div className="flex-row bg-slate-800 h-64"> <Typography variant="h4" sx={{color:"white",textAlign:"center", fontFamily: 'Poppins, sans-serif',
                 fontWeight: 600,}}> Our Clients’ Feedback</Typography>
         <TestimonialCarousel></TestimonialCarousel></div>
        </>
