@@ -27,7 +27,7 @@ variant="h3"
                 }}
                  className=""
 >
-Top gadgets, from high-performance laptops to smart home essentials.
+Latest product
 </Typography>
 <div className="flex flex-row space-x-14 lex justify-center items-center ">
 <StyledCard sx={{ maxWidth: 345,boxShadow:'4px 9px 20px rgba(0, 0, 0, 0.5)' }}>
