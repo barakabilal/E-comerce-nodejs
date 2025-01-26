@@ -30,9 +30,9 @@ function NavBar() {
     setAnchorElUser(event.currentTarget);
   };
 
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
+  // const handleCloseNavMenu = () => {
+  //   setAnchorElNav(null);
+  // };
 
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
@@ -41,7 +41,7 @@ function NavBar() {
   return (
     <motion.div>
       <ThemeProvider theme={theme}>
-        <AppBar position="static" sx={{ backgroundColor: '#333332', shadow: '3px', marginTop: '1px', borderRadius: '16px', maxWidth: 'xl',boxShadow: '3px 6px 10px rgba(2, 5, 0, 0.5)' }}>
+        <AppBar position="static" sx={{ backgroundColor: '#1e293b', shadow: '3px', marginTop: '1px', borderRadius: '16px', maxWidth: 'xl',boxShadow: '3px 6px 10px rgba(2, 5, 0, 0.5)' }}>
           <Container maxWidth="xl">
             <Toolbar disableGutters>
               {/* Desktop Logo */}
@@ -69,7 +69,7 @@ function NavBar() {
                 {pages.map((page) => (
                   <Button
                     key={page}
-                    onClick={handleCloseNavMenu}
+                    // onClick={handleCloseNavMenu}
                     sx={{
                       my: 2,
                       color: 'white', // Change all buttons to white

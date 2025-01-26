@@ -3,7 +3,7 @@ import Divider from '@mui/material/Divider';
 import BlurFade from "../../../components/blur-fade";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
- const About=()=>{
+ const Latestproduct=()=>{
     const StyledCard = styled(Card)(({ theme }) => ({
         transition: 'background-color 0.3s ease',
         '&:hover': {
@@ -191,4 +191,4 @@ variant="h4"
 
 )
  }
- export default About
+ export default Latestproduct
