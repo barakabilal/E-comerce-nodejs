@@ -4,6 +4,7 @@ import BlurFade from "../../../components/magicui/blur-fade";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Latestproductitems } from "../../../components/utils/lastproductitems";
 import { useNavigate } from "react-router-dom";
+
  const Latestproduct=()=>{
     const StyledCard = styled(Card)(({ theme }) => ({
         transition: 'background-color 0.3s ease',
@@ -33,30 +34,34 @@ variant="h3"
               
 >
   latest product
-</Typography>
-<div className="flex flex-row space-x-14 lex justify-center items-center ">
-<StyledCard sx={{ maxWidth: 345,boxShadow:'4px 9px 20px rgba(0, 0, 0, 0.5)' }}>
-      <CardMedia
-        onClick={handleonclick}
-        component="img"
-        height="140"
-        image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTF4LBPFpui0SGpg0aP1OhiRdGd4cZxm-tYyg&s"
-        alt="Sample Image"
-        className="cursor-pointer hover:w-96"
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-         DELL Laptops
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-        Powering Your Potential,
-        Top Seller This Month
-        </Typography>
-      </CardContent>
-    </StyledCard>
+  </Typography>
+  <div className="flex flex-row space-x-14 lex justify-center items-center ">
+  {Latestproductitems.map((product)=>(
+    <StyledCard sx={{ maxWidth: 345,boxShadow:'4px 9px 20px rgba(0, 0, 0, 0.5)' }}>
+          <CardMedia
+            onClick={handleonclick}
+            component="img"
+            height="140"
+            image={product.image}
+            alt="Sample Image"
+            className="cursor-pointer hover:h-56"
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+             {product.title}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+            {product.description}
+            </Typography>
+          </CardContent>
+        </StyledCard>
+   
+  )
 
-     
-</div>
+  )}
+
+</div>  
+
 
    <div className="h-7"></div>
 <Divider></Divider>  

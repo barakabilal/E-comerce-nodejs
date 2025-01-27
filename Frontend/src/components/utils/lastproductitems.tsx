@@ -1,6 +1,6 @@
 export const Latestproductitems = [
     {
-      image: "./assets/appshunter-io-N5qbfch8PrU-unsplash.jpg",
+      image: "../../../assets/appshunter-io-N5qbfch8PrU-unsplash.jpg",
       title: "Apple iPhone 14 Pro",
       price: 950,
       rating: 4.5,
@@ -8,7 +8,7 @@ export const Latestproductitems = [
       stock:20,
     },
     {
-      image: "./assets/appshunter-io-N5qbfch8PrU-unsplash.jpg",
+      image: "../assets/appshunter-io-N5qbfch8PrU-unsplash.jpg",
       title: "Apple iPhone 13",
       price: 700,
       rating: 4.5,
@@ -16,7 +16,7 @@ export const Latestproductitems = [
       stock:200,
     },
     {
-      image: "./assets/appshunter-io-N5qbfch8PrU-unsplash.jpg",
+      image: "../assets/appshunter-io-N5qbfch8PrU-unsplash.jpg",
       title: "Apple iPhone SE (2022)",
       price: 600,
       rating: 4.5,
