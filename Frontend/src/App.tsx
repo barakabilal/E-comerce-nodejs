@@ -17,6 +17,7 @@ function App() {
     <Route path="/registration" element={Registration()}/>
     <Route path="/privacy-policy" element={Privacy()}/>
     <Route path="/Shop" element={shopepage()}/>
+    <Route path="/Shop/element" element={shopepage()}/>
  </Routes>
  </BrowserRouter>
 
