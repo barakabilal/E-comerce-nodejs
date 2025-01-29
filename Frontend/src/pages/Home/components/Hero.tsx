@@ -3,8 +3,13 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Box, Button, Typography } from "@mui/material";
 import { useEffect, useRef } from "react";
 import Typed from "typed.js";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+  const navigate=useNavigate();
+  const clicknavigate=()=>{
+    navigate("/shop");
+  }
   const typedTextRef = useRef(null);
   useEffect(() => {
     const typed = new Typed(typedTextRef.current, {
@@ -63,6 +68,7 @@ const Hero = () => {
           >
             <Button
               startIcon={<ShoppingCartIcon style={{ color: "orange" }} />}
+              onClick={clicknavigate}
               variant="contained"
               sx={{
                 background: "white",

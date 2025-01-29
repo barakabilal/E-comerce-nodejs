@@ -1,30 +1,37 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
-import { createTheme, ThemeProvider } from '@mui/material/styles'; // Import theme provider
-import { motion } from 'framer-motion';
-
-const pages = ['home','shop','contact'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+import * as React from "react";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import Menu from "@mui/material/Menu";
+import Container from "@mui/material/Container";
+import Button from "@mui/material/Button";
+import Tooltip from "@mui/material/Tooltip";
+import MenuItem from "@mui/material/MenuItem";
+import AdbIcon from "@mui/icons-material/Adb";
+import { createTheme, ThemeProvider } from "@mui/material/styles"; // Import theme provider
+import { motion } from "framer-motion";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useNavigate } from "react-router-dom";
+const pages = ["home", "shop", "contact"];
+const settings = ["orders", "cart", "Logout"];
+const buttonColors: Map<string, string> = new Map();
+buttonColors.set('home', 'white');
+buttonColors.set('shop', 'white');
+buttonColors.set('contact', 'white');
 
 const theme = createTheme({
   typography: {
-    fontFamily: 'Poppins, sans-serif', // Define Poppins font
+    fontFamily: "Poppins, sans-serif", // Define Poppins font
   },
 });
 
 function NavBar() {
-  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
+  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
+    null
+  );
 
   const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElUser(event.currentTarget);
@@ -37,15 +44,36 @@ function NavBar() {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+const navigate=useNavigate();
 
+const [color,setcolor]=React.useState<Map<string, string>>(buttonColors)
+const handleButtonClick=(page:string)=>{
+  // Create a new map with the updated color
+    const updatedColor = new Map(color);
+    updatedColor.set(page, 'orange'); // Set color for the clicked button
+    // Update state with the new map
+    setcolor(updatedColor);
+    // Navigate to the new page
+    navigate("/shop");
+  };
   return (
     <motion.div>
       <ThemeProvider theme={theme}>
-        <AppBar position="static" sx={{ backgroundColor: '#1e293b', shadow: '3px', marginTop: '1px', borderRadius: '16px', maxWidth: 'xl',boxShadow: '3px 6px 10px rgba(2, 5, 0, 0.5)' }}>
+        <AppBar
+          position="static"
+          sx={{
+            backgroundColor: "#1e293b",
+            shadow: "3px",
+            marginTop: "1px",
+            borderRadius: "16px",
+            maxWidth: "xl",
+            boxShadow: "3px 6px 10px rgba(2, 5, 0, 0.5)",
+          }}
+        >
           <Container maxWidth="xl">
             <Toolbar disableGutters>
               {/* Desktop Logo */}
-              <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+              <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
               <Typography
                 variant="h6"
                 noWrap
@@ -53,27 +81,29 @@ function NavBar() {
                 href="#app-bar-with-responsive-menu"
                 sx={{
                   mr: 2,
-                  display: { xs: 'none', md: 'flex' },
-                  fontFamily: 'Poppins, sans-serif', // Apply Poppins font
+                  display: { xs: "none", md: "flex" },
+                  fontFamily: "Poppins, sans-serif", // Apply Poppins font
                   fontWeight: 700,
-                  letterSpacing: '.3rem',
-                  color: 'inherit',
-                  textDecoration: 'none',
+                  letterSpacing: ".3rem",
+                  color: "inherit",
+                  textDecoration: "none",
                 }}
               >
                 B-TECH
               </Typography>
 
               {/* Hide the mobile menu completely */}
-              <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+              <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
                 {pages.map((page) => (
+                  
                   <Button
                     key={page}
-                    // onClick={handleCloseNavMenu}
+                    onClick={() => handleButtonClick(page)}
                     sx={{
                       my: 2,
-                      color: 'white', // Change all buttons to white
-                      display: 'block',
+                      color: color.get(page.toString()), 
+                      display: "block",
+                      
                     }}
                   >
                     {page}
@@ -85,28 +115,30 @@ function NavBar() {
               <Box sx={{ flexGrow: 0 }}>
                 <Tooltip title="Open settings">
                   <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                    <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                    <FontAwesomeIcon icon={faUser} color="white" />
                   </IconButton>
                 </Tooltip>
                 <Menu
-                  sx={{ mt: '45px' }}
+                  sx={{ mt: "45px" }}
                   id="menu-appbar"
                   anchorEl={anchorElUser}
                   anchorOrigin={{
-                    vertical: 'top',
-                    horizontal: 'right',
+                    vertical: "top",
+                    horizontal: "right",
                   }}
                   keepMounted
                   transformOrigin={{
-                    vertical: 'top',
-                    horizontal: 'right',
+                    vertical: "top",
+                    horizontal: "right",
                   }}
                   open={Boolean(anchorElUser)}
                   onClose={handleCloseUserMenu}
                 >
                   {settings.map((setting) => (
                     <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                      <Typography sx={{ textAlign: 'center' }}>{setting}</Typography>
+                      <Typography sx={{ textAlign: "center" }}>
+                        {setting}
+                      </Typography>
                     </MenuItem>
                   ))}
                 </Menu>

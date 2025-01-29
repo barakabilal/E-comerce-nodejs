@@ -13,7 +13,7 @@ import { useNavigate } from "react-router-dom";
  // You can change this to any color
         },
       }));
-      const navigate=useNavigate();
+      const navigate=useNavigate();//navigation to the page shop 
       const handleonclick=()=>{
        navigate("/shop/element");
       }
@@ -71,11 +71,12 @@ variant="h3"
   <Button
             startIcon={<ShoppingCartIcon style={{ color: 'orange' }} />}
             variant="contained"
+            onClick={handleonclick}
             sx={{
               
               marginTop:"20px",
               background: 'white',
-              color: '#333332',
+              color: '#1e293b',
               width: '200px',
               fontFamily: 'Merriweather',
               fontWeight: "bold",
@@ -83,9 +84,10 @@ variant="h3"
               boxShadow: '3px 7px 20px rgba(200, 200, 200, 0.4)',
               borderRadius: '6%',
               '&:hover': {
-                background: '#333332',
+                background: '#1e293b',
                 color:"white"
               },
+              
             }}
           >
             Shop Now!
