@@ -50,11 +50,17 @@ const [color,setcolor]=React.useState<Map<string, string>>(buttonColors)
 const handleButtonClick=(page:string)=>{
   // Create a new map with the updated color
     const updatedColor = new Map(color);
+    //change all them into white befor changingthe color of one of them 
+    updatedColor.forEach((_,key) => {
+      updatedColor.set(key, "white");
+    });
     updatedColor.set(page, 'orange'); // Set color for the clicked button
-    // Update state with the new map
+     
+  
     setcolor(updatedColor);
-    // Navigate to the new page
-    navigate("/shop");
+    // Navigate to the new page based on the page send in parametre 
+    if(page=="home") navigate(`/`);
+     else{ navigate(`/${page}`);}
   };
   return (
     <motion.div>
