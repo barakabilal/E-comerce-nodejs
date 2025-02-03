@@ -8,3 +8,8 @@
     email: string,
     password:string,
 }
+export interface Contactparams{
+   name:string,
+   message:string,
+   email: string,
+}
