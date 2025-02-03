@@ -14,11 +14,12 @@ import { createTheme, ThemeProvider } from "@mui/material/styles"; // Import the
 import { motion } from "framer-motion";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useLocation } from "react-router-dom";
+import { useEffect } from "react";
 const pages = ["home", "shop", "contact"];
 const settings = ["orders", "cart", "Logout"];
 const buttonColors: Map<string, string> = new Map();
-buttonColors.set('home', 'white');
+buttonColors.set('home', 'orange');
 buttonColors.set('shop', 'white');
 buttonColors.set('contact', 'white');
 
@@ -62,6 +63,21 @@ const handleButtonClick=(page:string)=>{
     if(page=="home") navigate(`/`);
      else{ navigate(`/${page}`);}
   };
+  //making the hover orange in the nav bar different of the current location tat is different home shop  contact
+   const location = useLocation();
+  // if(location.pathname=="/privacy-policy"){
+  //   
+  // }
+  const locpath=location.pathname=="/privacy-policy";
+  useEffect(() =>{
+    const updatedColor = new Map(color);
+    updatedColor.forEach((_,key) => {
+      updatedColor.set(key, "white");
+    });
+    setcolor(updatedColor);
+
+    
+  }, [locpath]); 
   return (
     <motion.div>
       <ThemeProvider theme={theme}>

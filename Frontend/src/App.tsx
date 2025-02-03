@@ -5,7 +5,7 @@ import Privacy from "./pages/Privacy"
 import login from "./pages/Login"
 import Registration from "./pages/Registration"
 import shopepage from "./pages/Shop/Shopepage"
-
+import Footer from "./pages/Home/components/Footer"
 function App() {
   return (
  <BrowserRouter>
@@ -19,6 +19,7 @@ function App() {
     <Route path="/Shop" element={shopepage()}/>
     <Route path="/Shop/element" element={shopepage()}/>
  </Routes>
+ <Footer/>
  </BrowserRouter>
 
   )

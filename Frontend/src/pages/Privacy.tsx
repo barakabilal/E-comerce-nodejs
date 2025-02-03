@@ -10,7 +10,7 @@ return (
      <Typography sx={{fontWeight:"bold",size:21,}}> This page is under construction. For questions about our privacy practices, please contact us at:<div className="hover:text-blue-700"> <FontAwesomeIcon icon={faEnvelope} /> support@btechstore.com</div></Typography>
       
     </div>
-
+<div className="h-72"></div>
 </>
 )
 }

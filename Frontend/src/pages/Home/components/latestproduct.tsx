@@ -44,7 +44,7 @@ variant="h3"
             height="140"
             image={product.image}
             alt="Sample Image"
-            className="cursor-pointer hover:h-56"
+            className="cursor-pointer h-64 hover:h-56"
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
