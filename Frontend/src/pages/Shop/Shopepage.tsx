@@ -186,7 +186,7 @@ const categories: Category[] = [
   { value: 'accessories', label: 'Accessories', icon: '🎧' }
 ];
 
-const Shop: React.FC = () => {
+const Shop = () => {
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [sortBy, setSortBy] = useState<string>('name');
