@@ -1,4 +1,7 @@
-  const StarRating= () => {
+import  { StarRatingProps} from "../../../components/utils/Types";
+
+
+  const StarRating= ({rating}:StarRatingProps) => {
     const stars: JSX.Element[] = [];
     const fullStars = Math.floor(rating);
     const hasHalfStar = rating % 1 !== 0;
