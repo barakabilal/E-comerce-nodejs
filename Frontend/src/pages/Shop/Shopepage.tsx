@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { Category, Product, StarRatingProps } from '../../components/utils/Types';
 import { shopProducts } from '../../components/utils/shopproducts';
 import { categories } from '../../components/utils/categories';
+import Header from './components/Header';
 
 const Shop = () => {
   const [searchTerm, setSearchTerm] = useState<string>('');
@@ -216,27 +217,7 @@ const Shop = () => {
         }
       `}</style>
 
-      {/* Header Section */}
-      <div className="bg-slate-800 h-64">
-        <div className="container mx-auto px-4 py-8 h-full flex flex-col justify-center">
-          <h1 className="text-5xl font-bold text-center gradient-text mb-4" 
-              style={{ 
-                fontFamily: 'Poppins, sans-serif',
-                color: 'orange',
-                background: 'orange',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                fontWeight: 'bold',
-              }}>
-            Our Shop
-          </h1>
-          <p className="text-xl text-center text-white mb-8" 
-             style={{ fontFamily: 'Merriweather, serif', fontWeight: 600 }}>
-            Discover the latest in technology
-          </p>
-        </div>
-      </div>
-
+     <Header></Header>
       <div className="container mx-auto px-4 py-6">
         {/* Search and Filters */}
         <div className="bg-white rounded-lg shadow-md p-6 mb-8 blur-fade">
