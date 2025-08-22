@@ -4,12 +4,13 @@ import { shopProducts } from '../../components/utils/shopproducts';
 import { categories } from '../../components/utils/categories';
 import Header from './components/Header';
 
+
 const Shop = () => {
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [sortBy, setSortBy] = useState<string>('name');
   const [priceRange, setPriceRange] = useState<string>('all');
-
+  const [settowrite,issettowrite]=useState<boolean>(false)
   const filteredAndSortedProducts = useMemo<Product[]>(() => {
     const filtered = shopProducts.filter((product: Product) => {
       const matchesSearch = product.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -60,7 +61,12 @@ const Shop = () => {
   const handlePriceRangeChange = (event: React.ChangeEvent<HTMLSelectElement>): void => {
     setPriceRange(event.target.value);
   };
-
+const onmouseenter=()=>{
+  issettowrite(true)
+}
+const onmouseeleave=()=>{
+  issettowrite(settowrite)
+}
   const StarRating: React.FC<StarRatingProps> = ({ rating }) => {
     const stars: JSX.Element[] = [];
     const fullStars = Math.floor(rating);
@@ -223,14 +229,29 @@ const Shop = () => {
         <div className="bg-white rounded-lg shadow-md p-6 mb-8 blur-fade">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
             <div className="relative">
-              <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-orange-500">🔍</span>
-              <input 
-                type="text" 
-                placeholder="Search products..." 
-                className="filter-input pl-10"
-                value={searchTerm}
-                onChange={handleSearchChange}
-              />
+             
+      {issettowrite? (
+  <input
+    type="text"
+    onMouseEnter={onmouseenter}
+    onMouseLeave={onmouseeleave}
+    className="filter-input pl-7"
+    value={searchTerm}
+    onChange={handleSearchChange}
+  />
+) : (
+  <div className="relative">
+    <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-orange-500 mr-9">🔍</span>
+    <input
+      type="text"
+      onMouseEnter={onmouseenter}
+    onMouseLeave={onmouseeleave}
+      className="filter-input pl-7"
+      value={searchTerm}
+      onChange={handleSearchChange}
+    />
+  </div>
+)}
             </div>
             
             <select 
