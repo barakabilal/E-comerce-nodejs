@@ -3,7 +3,7 @@ import { Category, Product, StarRatingProps } from '../../components/utils/Types
 import { shopProducts } from '../../components/utils/shopproducts';
 import { categories } from '../../components/utils/categories';
 import Header from './components/Header';
-
+import Autosuggest from 'react-autosuggest';
 
 const Shop = () => {
   const [searchTerm, setSearchTerm] = useState<string>('');
@@ -241,18 +241,13 @@ useEffect(() => {
             <div className="relative">
              
   <div className="relative">
-  {searchTerm === '' ? (
-    <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-orange-500 pointer-events-none">
-      🔍
-    </span>
-  ):(<div></div>)}
-  <input
-    type="text"
-    className="filter-input pl-10"
-    value={searchTerm}
-    onChange={handleSearchChange}
-  />
-</div>
+  <Autosuggest 
+  suggestions={suggestions}
+  onSuggestionsFetchRequested={fetchSuggestions}
+  getSuggestionValue={suggestion => suggestion.title}
+  renderSuggestion={suggestion => <div>{suggestion.title}</div>}
+/>
+
             </div>
             
             <select 
