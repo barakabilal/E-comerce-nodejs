@@ -2,7 +2,7 @@
 
 const Header= () => {
   return (
-    <div className="relative w-full h-screen overflow-hidden p-3">
+    <div className="relative h-screen border bg-slate-800 p-2 rounded-2xl mt-1">
       <style>{`
         .bg-gradient {
         background-color: #64748b;

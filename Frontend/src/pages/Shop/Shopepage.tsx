@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Category, Product, StarRatingProps } from '../../components/utils/Types';
 import { shopProducts } from '../../components/utils/shopproducts';
 import { categories } from '../../components/utils/categories';
@@ -10,7 +10,7 @@ const Shop = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [sortBy, setSortBy] = useState<string>('name');
   const [priceRange, setPriceRange] = useState<string>('all');
-  const [settowrite,issettowrite]=useState<boolean>(false)
+
   const filteredAndSortedProducts = useMemo<Product[]>(() => {
     const filtered = shopProducts.filter((product: Product) => {
       const matchesSearch = product.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -45,7 +45,22 @@ const Shop = () => {
   const handleAddToCart = (product: Product): void => {
     alert(`Added ${product.title} to cart!`);
   };
+// Add search suggestions dropdown
+const [suggestions, setSuggestions] = useState<Product[]>([]);
+const [showSuggestions, setShowSuggestions] = useState(false);
 
+// Auto-complete functionality
+useEffect(() => {
+  if (searchTerm.length > 1) {
+    const matches = shopProducts
+      .filter(p => p.title.toLowerCase().includes(searchTerm.toLowerCase()))
+      .slice(0, 5);
+    setSuggestions(matches);
+    setShowSuggestions(true);
+  } else {
+    setShowSuggestions(false);
+  }
+}, [searchTerm]);
   const handleCategoryChange = (category: string): void => {
     setSelectedCategory(category);
   };
@@ -61,12 +76,7 @@ const Shop = () => {
   const handlePriceRangeChange = (event: React.ChangeEvent<HTMLSelectElement>): void => {
     setPriceRange(event.target.value);
   };
-const onmouseenter=()=>{
-  issettowrite(true)
-}
-const onmouseeleave=()=>{
-  issettowrite(settowrite)
-}
+
   const StarRating: React.FC<StarRatingProps> = ({ rating }) => {
     const stars: JSX.Element[] = [];
     const fullStars = Math.floor(rating);
@@ -230,28 +240,19 @@ const onmouseeleave=()=>{
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
             <div className="relative">
              
-      {issettowrite? (
+  <div className="relative">
+  {searchTerm === '' ? (
+    <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-orange-500 pointer-events-none">
+      🔍
+    </span>
+  ):(<div></div>)}
   <input
     type="text"
-    onMouseEnter={onmouseenter}
-    onMouseLeave={onmouseeleave}
-    className="filter-input pl-7"
+    className="filter-input pl-10"
     value={searchTerm}
     onChange={handleSearchChange}
   />
-) : (
-  <div className="relative">
-    <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-orange-500 mr-9">🔍</span>
-    <input
-      type="text"
-      onMouseEnter={onmouseenter}
-    onMouseLeave={onmouseeleave}
-      className="filter-input pl-7"
-      value={searchTerm}
-      onChange={handleSearchChange}
-    />
-  </div>
-)}
+</div>
             </div>
             
             <select 
