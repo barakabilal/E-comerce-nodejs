@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo, useEffect, ChangeEvent } from 'react';
 import { Category, Product, StarRatingProps } from '../../components/utils/Types';
 import { shopProducts } from '../../components/utils/shopproducts';
 import { categories } from '../../components/utils/categories';
@@ -46,21 +46,18 @@ const Shop = () => {
     alert(`Added ${product.title} to cart!`);
   };
 // Add search suggestions dropdown
-const [suggestions, setSuggestions] = useState<Product[]>([]);
-const [showSuggestions, setShowSuggestions] = useState(false);
+// const [suggestions, setSuggestions] = useState<Product[]>([]);
+
 
 // Auto-complete functionality
-useEffect(() => {
-  if (searchTerm.length > 1) {
-    const matches = shopProducts
-      .filter(p => p.title.toLowerCase().includes(searchTerm.toLowerCase()))
-      .slice(0, 5);
-    setSuggestions(matches);
-    setShowSuggestions(true);
-  } else {
-    setShowSuggestions(false);
-  }
-}, [searchTerm]);
+
+//the logic for the fetchsuggetions
+// const fetchSuggestions=()=>{
+//     const matches = shopProducts
+//       .filter(p => p.title.toLowerCase().includes(searchTerm.toLowerCase()))
+//       .slice(0, 5);
+//     setSuggestions(matches);
+// }
   const handleCategoryChange = (category: string): void => {
     setSelectedCategory(category);
   };
@@ -93,7 +90,6 @@ useEffect(() => {
     }
     return <div className="flex">{stars}</div>;
   };
-
   return (
     <div className="min-h-screen bg-gray-50">
       <style>{`
@@ -241,12 +237,18 @@ useEffect(() => {
             <div className="relative">
              
   <div className="relative">
-  <Autosuggest 
-  suggestions={suggestions}
-  onSuggestionsFetchRequested={fetchSuggestions}
-  getSuggestionValue={suggestion => suggestion.title}
-  renderSuggestion={suggestion => <div>{suggestion.title}</div>}
-/>
+   {searchTerm === '' ? (
+    <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-orange-500 pointer-events-none">
+      🔍
+    </span>
+  ):(<div></div>)}
+  <input
+    type="text"
+    className="filter-input pl-10"
+    value={searchTerm}
+    onChange={handleSearchChange}
+  />
+</div>
 
             </div>
             
@@ -395,6 +397,7 @@ useEffect(() => {
         </div>
       </div>
     </div>
+    
   );
 };
 
