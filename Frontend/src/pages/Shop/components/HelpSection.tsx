@@ -5,7 +5,7 @@ import { Search, MessageCircle, Phone, Mail,  ChevronDown, ChevronUp, Star, Awar
 const HelpSection = () => {
   const [activeTab, setActiveTab] = useState('support');
   const [openFaq, setOpenFaq] = useState(null);
-  const [searchQuery, setSearchQuery] = useState('');
+ 
 
   const faqs = [
     {
@@ -97,26 +97,13 @@ const HelpSection = () => {
             <Headphones className="w-5 h-5 text-orange-400" />
             <span className="text-orange-300 font-medium">24/7 Support Available</span>
           </div>
-          
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-orange-400 to-white bg-clip-text text-transparent">
+        
+          <h2 className="text-5xl md:text-6xl  font-bold mb-8 bg-gradient-to-r from-orange-400 to-white bg-clip-text text-transparent">
             Need Help Finding the Perfect Product?
           </h2>
-          
-          <p className="text-xl text-slate-300 mb-12 max-w-2xl mx-auto">
+          <p className="text-xl text-slate-300 mb-12  max-w-2xl mx-auto">
             Our tech experts are here to guide you through every step of your journey
           </p>
-
-          {/* Search Bar */}
-          <div className="relative max-w-2xl mx-auto mb-12">
-            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-400 w-5 h-5" />
-            <input
-              type="text"
-              placeholder="Search for help articles, products, or ask a question..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-6 py-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
-            />
-          </div>
         </div>
       </div>
 
@@ -272,7 +259,7 @@ const HelpSection = () => {
       )}
 
       {/* Footer CTA */}
-      <div className="bg-gradient-to-r from-orange-500 to-orange-600 py-16 px-6">
+      <div className="bg-gradient-to-r bg-orange-500 py-16 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h3 className="text-3xl font-bold mb-4">Still Need Help?</h3>
           <p className="text-orange-100 mb-8 text-lg">
