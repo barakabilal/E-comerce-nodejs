@@ -1,9 +1,10 @@
-import React, { useState, useMemo, useEffect, ChangeEvent } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Category, Product, StarRatingProps } from '../../components/utils/Types';
 import { shopProducts } from '../../components/utils/shopproducts';
 import { categories } from '../../components/utils/categories';
 import Header from './components/Header';
-import Autosuggest from 'react-autosuggest';
+import HelpSection from './components/Helpsection';
+
 
 const Shop = () => {
   const [searchTerm, setSearchTerm] = useState<string>('');
@@ -384,20 +385,11 @@ const Shop = () => {
         <hr className="border-slate-800" />
         
         {/* Call to Action */}
-        <div className="text-center py-8 blur-fade">
-          <h3 className="text-3xl font-bold p-4 text-black" style={{ fontFamily: 'Poppins, sans-serif' }}>
-            Need help finding the perfect product?
-          </h3>
-          <button 
-            className="shop-btn w-64 h-12 mt-5" 
-            onClick={() => alert('Contact feature coming soon!')}
-          >
-            Contact Our Experts
-          </button>
+       <HelpSection></HelpSection>
+        
         </div>
       </div>
-    </div>
-    
+  
   );
 };
 
