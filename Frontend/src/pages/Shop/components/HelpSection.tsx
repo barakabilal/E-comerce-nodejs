@@ -199,7 +199,7 @@ const HelpSection = () => {
         <div className="max-w-4xl mx-auto px-6 pb-20">
           <div className="space-y-4">
             {faqs.map((faq) => (
-              <div key={faq.id} className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl overflow-hidden">
+              <div key={faq.id} className="bg-white/10 backdrop-blur-md border border-white/20  bg-white/20 rounded-2xl overflow-hidden">
                 <button
                   onClick={() => toggleFaq(faq.id)}
                   className="w-full p-6 text-left flex items-center justify-between hover:bg-white/5 transition-colors duration-200"

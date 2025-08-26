@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { Contactparams } from "../types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -45,7 +46,7 @@ const Contactpage = () => {
   };
 
   return (
-    <>
+    <div className="h-screen w-full m-3 bg-slate-800">
       <div
         id="body"
         className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8"
@@ -53,14 +54,15 @@ const Contactpage = () => {
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <div className="mx-auto h-10 w-auto text-center">
             <i className="fas fa-comment-dots fa-3x text-indigo-600"></i>
-            <h2 className="text-gray-800 font-semibold text-2xl">
+            <h2 className="text-white font-semibold text-2xl">
               B-tech-Store
             </h2>
             {open?<SuccessMessage open={open}></SuccessMessage>:<div></div>}
           </div>
 
-          <h2 className="mt-10 text-center text-xl font-bold leading-9 tracking-tight text-gray-900">
-            contact us <FontAwesomeIcon icon={faPhone} />
+          <h2 className="mt-10 text-center text-xl text-orange-300 font-bold leading-9 tracking-tigh">
+            contact us <FontAwesomeIcon icon={faPhone} className="text-orange-300 " />
+
           </h2>
         </div>
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
@@ -68,7 +70,7 @@ const Contactpage = () => {
             <div>
               <label
                 htmlFor="username"
-                className="block text-sm font-medium leading-6 text-gray-900"
+                className="block text-sm font-medium leading-6 text-white"
               >
                 name
               </label>
@@ -80,7 +82,7 @@ const Contactpage = () => {
                   value={inputvalue.name}
                   onChange={onchange}
                   required
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border-0 py-1.5 text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
@@ -89,7 +91,7 @@ const Contactpage = () => {
               <div className="flex items-center justify-between">
                 <label
                   htmlFor="password"
-                  className="block text-sm font-medium leading-6 text-gray-900"
+                  className="block text-sm font-medium leading-6 text-white"
                 >
                   email
                 </label>
@@ -111,7 +113,7 @@ const Contactpage = () => {
               <div className="flex items-center justify-between">
                 <label
                   htmlFor="password"
-                  className="block text-sm font-medium leading-6 text-gray-900"
+                  className="block text-sm font-medium leading-6 text-white"
                 >
                   message
                 </label>
@@ -182,7 +184,7 @@ const Contactpage = () => {
                 onClick={onclik}
                 id="signin"
                 type="submit"
-                className="flex w-full justify-center rounded-md bg-gray-800 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="flex w-full justify-center rounded-md border-bg-white/10 backdrop-blur-md border border-white/20  bg-white/20 rounded-2xl overflow-hidden px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-2xl hover:bg-orange-400"
               >
                 Send Message
               </button>
@@ -193,7 +195,7 @@ const Contactpage = () => {
 
       <div id="loader" className="text-indigo-700"></div>
       <div id="divider" className="divider mt-28"></div>
-    </>
+    </div>
   );
 };
 export default Contactpage;
