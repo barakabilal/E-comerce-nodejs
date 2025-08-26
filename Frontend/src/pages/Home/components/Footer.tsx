@@ -23,7 +23,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <>
-      <div className="h-14"></div>
+      <div className="h-10"></div>
       <Divider></Divider>
       <section className=" bg-slate-800 rounded-xl m-3">
         <div className="flex flex-row space-x-64 justify-center align-top text-white">

@@ -1,10 +1,11 @@
 
-import { SetStateAction, useState } from 'react';
-import { Search, MessageCircle, Phone, Mail,  ChevronDown, ChevronUp, Star, Award, Shield, Headphones, Book, Users, Zap } from 'lucide-react';
+import { useState } from 'react';
+import { MessageCircle, Phone, Mail,  ChevronDown, ChevronUp, Star, Award, Shield, Headphones, Book, Users, Zap } from 'lucide-react';
+import {  useNavigate } from 'react-router-dom';
 
 const HelpSection = () => {
   const [activeTab, setActiveTab] = useState('support');
-  const [openFaq, setOpenFaq] = useState(null);
+  const [openFaq, setOpenFaq] = useState<number|null>(null);
  
 
   const faqs = [
@@ -83,9 +84,15 @@ const HelpSection = () => {
     }
   ];
 
-  const toggleFaq = (id:null|SetStateAction<null>) => {
+  const toggleFaq = (id:null|number) => {
     setOpenFaq(openFaq === id ? null : id);
   };
+  const navigate=useNavigate();
+  //handleclicking to contact page 
+  const handlebuttontocontact=()=>{
+    navigate('/contact')
+
+  }
 
   return (
     <div className="bg-slate-800 text-white">
@@ -175,6 +182,7 @@ const HelpSection = () => {
                 'Product Guide'
               ].map((action, index) => (
                 <button
+                onClick={handlebuttontocontact}
                   key={index}
                   className="p-4 bg-white/10 hover:bg-white/20 rounded-xl font-medium transition-all duration-200 hover:scale-105"
                 >
@@ -214,7 +222,9 @@ const HelpSection = () => {
           
           <div className="text-center mt-12">
             <p className="text-slate-400 mb-4">Can't find what you're looking for?</p>
-            <button className="px-8 py-3 bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl font-medium hover:from-orange-600 hover:to-orange-700 transition-all duration-200 hover:scale-105 shadow-lg">
+            <button 
+            onClick={handlebuttontocontact}
+            className="px-8 py-3 bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl font-medium hover:from-orange-600 hover:to-orange-700 transition-all duration-200 hover:scale-105 shadow-lg">
               Contact Our Experts
             </button>
           </div>
@@ -259,19 +269,23 @@ const HelpSection = () => {
       )}
 
       {/* Footer CTA */}
-      <div className="bg-gradient-to-r bg-orange-500 py-16 px-6">
+      <div className=" bg-orange-500 py-16 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h3 className="text-3xl font-bold mb-4">Still Need Help?</h3>
           <p className="text-orange-100 mb-8 text-lg">
             Our expert team is standing by to provide personalized assistance
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-4 bg-white text-orange-600 font-bold rounded-xl hover:bg-orange-50 transition-colors duration-200 flex items-center gap-2 justify-center">
+            <button 
+            onClick={handlebuttontocontact}
+            className="px-8 py-4 bg-white text-orange-600 font-bold rounded-xl hover:bg-orange-50 transition-colors duration-200 flex items-center gap-2 justify-center">
               <MessageCircle className="w-5 h-5" />
               Start Live Chat
             </button>
-            <button className="px-8 py-4 bg-white/20 backdrop-blur-md border border-white/20 font-bold rounded-xl hover:bg-white/30 transition-colors duration-200 flex items-center gap-2 justify-center">
-              <Phone className="w-5 h-5" />
+            <button 
+            onClick={handlebuttontocontact}
+            className="px-8 py-4 bg-white/20 backdrop-blur-md border border-white/20 font-bold rounded-xl hover:bg-white/30 transition-colors duration-200 flex items-center gap-2 justify-center">
+              <Phone className="w-5 h-5"/>
               Schedule Call
             </button>
           </div>
