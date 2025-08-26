@@ -46,7 +46,7 @@ const Contactpage = () => {
   };
 
   return (
-    <div className="h-screen w-full m-3 bg-slate-800">
+    <div className="  m-2 h-full bg-slate-800">
       <div
         id="body"
         className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8"
@@ -54,7 +54,7 @@ const Contactpage = () => {
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <div className="mx-auto h-10 w-auto text-center">
             <i className="fas fa-comment-dots fa-3x text-indigo-600"></i>
-            <h2 className="text-white font-semibold text-2xl">
+            <h2 className="font-bold text-2xl bg-gradient-to-r from-orange-600 to-white bg-clip-text text-transparent ">
               B-tech-Store
             </h2>
             {open?<SuccessMessage open={open}></SuccessMessage>:<div></div>}
@@ -64,6 +64,11 @@ const Contactpage = () => {
             contact us <FontAwesomeIcon icon={faPhone} className="text-orange-300 " />
 
           </h2>
+          <div className="container w-full h-min mt-2 bg-white/20 border rounded-2xl border-white">
+                  <h3 className="p-3">Need Help?
+Our support team is here for you!
+If you have any questions, need assistance with your order, or encounter any issues with payment, please don’t hesitate to reach out and left your message here down!.</h3>
+          </div>
         </div>
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
           <form className="space-y-6" id="login-form">
@@ -72,7 +77,7 @@ const Contactpage = () => {
                 htmlFor="username"
                 className="block text-sm font-medium leading-6 text-white"
               >
-                name
+                Name
               </label>
               <div className="mt-2">
                 <input
@@ -82,18 +87,17 @@ const Contactpage = () => {
                   value={inputvalue.name}
                   onChange={onchange}
                   required
-                  className="block w-full rounded-md border-0 py-1.5 text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md  py-1.5  border-2 border-orange-400   placeholder:text-gray-400    sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
-
             <div>
               <div className="flex items-center justify-between">
                 <label
                   htmlFor="password"
                   className="block text-sm font-medium leading-6 text-white"
                 >
-                  email
+                  Email
                 </label>
               </div>
               <div className="mt-2">
@@ -105,9 +109,18 @@ const Contactpage = () => {
                   value={inputvalue.email}
                   onChange={onchange}
                   required
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md  py-1.5  border-2 border-orange-400   placeholder:text-gray-400    sm:text-sm sm:leading-6"
                 />
               </div>
+            </div>
+            <div>
+              <label className="block text-sm font-medium leading-6 text-white" >Choose a topic:</label>
+                <select id="help" name="help" className="border p-2 rounded">
+                  <option value="order">Order Issues</option>
+                  <option value="payment">Payment Problems</option>
+                  <option value="delivery">Delivery Questions</option>
+                  <option value="other">Other</option>
+                </select>
             </div>
             <div>
               <div className="flex items-center justify-between">
@@ -126,7 +139,7 @@ const Contactpage = () => {
                   value={inputvalue.message}
                   onChange={onchange}
                   required
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 h-36"
+                  className="block w-full rounded-md  py-1.5  border-2 border-orange-400   placeholder:text-gray-400    sm:text-sm sm:leading-6 h-36"
                 />
               </div>
             </div>
