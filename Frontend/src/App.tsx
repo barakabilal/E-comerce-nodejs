@@ -7,6 +7,7 @@ import Registration from "./pages/Registration"
 import shopepage from "./pages/Shop/Shopepage"
 import Footer from "./pages/Home/components/Footer"
 import Contactpage from "./pages/contact"
+import ProductShowcase from "./pages/ProductShowcase"
 
 function App() {
   return (
@@ -19,8 +20,9 @@ function App() {
     <Route path="/registration" element={Registration()}/>
     <Route path="/privacy-policy" element={Privacy()}/>
     <Route path="/Shop" element={shopepage()}/>
-    <Route path="/Shop/element" element={shopepage()}/>
+    <Route path="/Shop/element" element={ProductShowcase()}/>
     <Route path="/contact" element={Contactpage()}/>
+    
       
  </Routes>
  <Footer/>
