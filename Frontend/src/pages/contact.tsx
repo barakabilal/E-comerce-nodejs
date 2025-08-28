@@ -113,6 +113,7 @@ If you have any questions, need assistance with your order, or encounter any iss
                 />
               </div>
             </div>
+
             <div>
               <label className="block text-sm font-medium leading-6 text-white" >Choose a topic:</label>
                 <select id="help" name="help" className="border p-2 rounded">
@@ -122,6 +123,7 @@ If you have any questions, need assistance with your order, or encounter any iss
                   <option value="other">Other</option>
                 </select>
             </div>
+
             <div>
               <div className="flex items-center justify-between">
                 <label
@@ -140,6 +142,27 @@ If you have any questions, need assistance with your order, or encounter any iss
                   onChange={onchange}
                   required
                   className="block w-full rounded-md  py-1.5  border-2 border-orange-400   placeholder:text-gray-400    sm:text-sm sm:leading-6 h-36"
+                />
+              </div>
+            </div>
+            <div>
+              <div className="flex items-center justify-between">
+                <label
+                  htmlFor="password"
+                  className="block text-sm font-medium leading-6 text-white"
+                >
+                  Order Id
+                </label>
+              </div>
+              <div className="mt-2">
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="45193823"
+                 
+                  required
+                  className="block w-full rounded-md  py-1.5  border-2 border-orange-400   placeholder:text-gray-400    sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
