@@ -1,8 +1,12 @@
-import { Star, Zap } from "lucide-react";
+import { Divider } from "@mui/material";
+import { Heart, RotateCcw, Shield, Star, Truck, Zap } from "lucide-react";
+
+import ProductGallery from "../components/ui/carousel";
 
 const ProductShowcase = () => {
   return (
-    <div className="h-screen bg-slate-800 m-2">
+
+    <div className="h-max bg-slate-800 m-2">
 
       {/* Floating Points Animation Styles */}
       <style>
@@ -76,8 +80,8 @@ const ProductShowcase = () => {
       ))}
 
       {/* Product Showcase */}
-      <div className="container flex flex-row gap-40 justify-center h-full items-center">
-        <div className="w-1/3 h-2/3">
+      <div className="container flex flex-row gap-36 justify-center h-full items-center">
+        <div className="w-1/3 h-2/3 mt-6">
           <img
             className="border rounded-md"
             src="https://m.media-amazon.com/images/I/81nvxIhrYKL._AC_SL1500_.jpg"
@@ -85,7 +89,7 @@ const ProductShowcase = () => {
           />
         </div>
 
-        <div className="w-1/3 h-2/3">
+        <div className="w-3/6 h-2/3">
           <h1 className="text-white font-bold text-6xl">
             Pro Gaming Beast X1
           </h1>
@@ -112,13 +116,38 @@ const ProductShowcase = () => {
                <Zap className="w-4 h-4" />
                 BEST SELLER
             </span>
-            <div className="flex flex-row  gap-4 container mt-3">
-                <button className="bg-orange-500 w-2/3 rounded-lg text-xl font-bold">ADD to cart</button>
-                <button className="w-1/3 text-xl font-bold">wishlist</button>
-            </div>
+         
           </div>
+             <div className="flex flex-row w-full gap-3 container mt-6">
+                <button className="bg-orange-500 w-2/3  h-11 rounded-lg text-xl font-bold text-white">Add to cart</button>
+                <div className="border rounded-lg border-white border-3px w-1/3 flex flex-row gap-3"> <Heart  className="text-white h-min w-min mt-2 ml-2" /> <button className=" text-xl font-bold text-white ">wishlist</button></div>
+                
+            </div>
+            <h1 className="h-6"></h1>
+            <Divider orientation="horizontal" className="bg-white "/>
+            <div className="flex flex-row gap-14 justify-center items-center mt-3">
+               <div className="flex items-center gap-2  text-orange-400">
+                  <Shield className="w-5 h-5" />
+                  <span className="text-sm">2-Year Warranty</span>
+                </div>
+                 <div className="flex items-center gap-2  text-orange-400">
+                  <Truck className="w-5 h-5" />
+                  <span className="text-sm">Free Shipping</span>
+                </div>
+                  <div className="flex items-center gap- ml-3  text-orange-400">
+                  <RotateCcw className="w-5 h-5" />
+                  <span className="text-sm">30-Day Returns</span>
+                </div>
+            </div>
         </div>
       </div>
+      <h2 className=" mt-4 text-center font-bold text-2xl bg-gradient-to-r from-orange-600 to-white bg-clip-text text-transparent ">
+              Product Overview
+            </h2>
+     {/**the product overview */}
+     <ProductGallery></ProductGallery>
+
+
     </div>
   );
 };
