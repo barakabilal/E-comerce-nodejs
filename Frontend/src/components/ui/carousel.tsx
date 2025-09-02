@@ -11,9 +11,9 @@ const carousel = () => {
 
   return (
     <>
-      <div className="h-screen flex justify-center items-center bg-slate-800 w-full m-1">
+  
         {/* product overview */}
-        <div className="bg-slate-700/50 justify-center w-4/12 h-5/6 gap-6 rounded-lg border-non flex flex-col">
+        <div className="bg-slate-700/50 justify-center mt-10 p-2 ml-28 w-9/12 h-5/6  h-min gap-6 rounded-lg border-non flex flex-col">
           <div className="basis-2/3 ml-3 mr-3 mt-6 h-96 bg-white rounded-lg border-none">
             <img className="object-cover h-full w-full" src={images[index]} alt="" />
           </div>
@@ -31,7 +31,9 @@ const carousel = () => {
             </div>
           </div>
         </div>
-      </div>
+        
+      
+      
     </>
   );
 };

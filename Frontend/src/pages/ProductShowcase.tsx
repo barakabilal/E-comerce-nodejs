@@ -2,6 +2,7 @@ import { Divider } from "@mui/material";
 import { Heart, RotateCcw, Shield, Star, Truck, Zap } from "lucide-react";
 
 import ProductGallery from "../components/ui/carousel";
+import TabbedProductInfo from "../components/utils/TabbedProductInfo";
 
 const ProductShowcase = () => {
   return (
@@ -145,9 +146,16 @@ const ProductShowcase = () => {
               Product Overview
             </h2>
      {/**the product overview */}
-     <ProductGallery></ProductGallery>
+     <div className="flex flex-row gap-9">
+<div className="flex-1"> <TabbedProductInfo></TabbedProductInfo></div>
+<div className="flex-1"> <ProductGallery></ProductGallery></div>
 
 
+     </div>
+     <Divider className="bg-white"></Divider>
+     <h1 className=" mt-4 text-center font-bold text-2xl bg-gradient-to-r from-orange-600 to-white bg-clip-text text-transparent ">
+              Payment proccess
+            </h1>
     </div>
   );
 };
