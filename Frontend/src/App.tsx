@@ -8,6 +8,7 @@ import shopepage from "./pages/Shop/Shopepage"
 import Footer from "./pages/Home/components/Footer"
 import Contactpage from "./pages/contact"
 import ProductShowcase from "./pages/ProductShowcase"
+import OrderConfirmation from "./pages/orderconfirmation"
 
 
 function App() {
@@ -23,8 +24,8 @@ function App() {
     <Route path="/Shop" element={shopepage()}/>
     <Route path="/Shop/element" element={ProductShowcase()}/>
     <Route path="/contact" element={Contactpage()}/>
-    
-    
+    <Route path="/test" element={OrderConfirmation()}/>
+
       
  </Routes>
  <Footer/>

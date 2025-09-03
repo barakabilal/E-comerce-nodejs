@@ -156,6 +156,15 @@ const ProductShowcase = () => {
      <h1 className=" mt-4 text-center font-bold text-2xl bg-gradient-to-r from-orange-600 to-white bg-clip-text text-transparent ">
               Payment proccess
             </h1>
+            {/* payment method*/}
+
+            <div className="flex justify-center items-center h-3/5 w-4/5">
+               <div className=" bg-slate-50/20 w-full h-full rounded-lg border-none">
+                   <h2>2.499 $</h2>
+                   <h2></h2>
+                   <h3></h3>
+               </div>
+            </div>
     </div>
   );
 };
